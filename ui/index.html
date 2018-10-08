@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ascii dog shelter</title>
+</head>
+<body>
+  <div id="list"></div>
+  <form onSubmit="addDog()">
+    <textarea id="ascii">
+
+    </textarea>
+    <input type="submit" id="submit"/>
+  </form>
+  <script type="text/javascript">
+    window.onload = function() {
+      fetch('/fn/dogManagement/listDogs', {
+        method: 'post'
+      }).then(r => r.json()).then(dogs => {
+        console.log(dogs)
+        const list = dogs.map(d => `<pre>${d.ascii}</pre>`)
+        document.querySelector('#list').innerHTML = list.join('\n')
+      })
+    }
+
+    window.addDog = function () {
+      event.preventDefault()
+      const ascii = document.querySelector('#ascii').value
+      fetch('/fn/dogManagement/dogPicCreate', {
+        method: 'post',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          ascii,
+          name: "Bobby",
+          breed: "Huscii"
+        })
+      })
+    }
+  </script>
+</body>
+</html>

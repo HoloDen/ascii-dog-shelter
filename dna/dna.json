@@ -1,0 +1,58 @@
+{
+  "Version": 1,
+  "UUID": "28016ec1-6bba-4533-b8aa-944fc0b15653",
+  "Name": "ascii-dog-shelter",
+  "Properties": {
+    "description": "Dogfooding ASCII dog image hosting",
+    "language": "en"
+  },
+  "PropertiesSchemaFile": "properties_schema.json",
+  "DHTConfig": {
+    "HashType": "sha2-256"
+  },
+  "Zomes": [
+    {
+      "Name": "dogManagement",
+      "Description": "Manage the dogs (in the shelter)",
+      "RibosomeType": "js",
+      "CodeFile": "dogmanagement.js",
+      "Entries": [
+        {
+          "Name": "dogPic",
+          "Required": true,
+          "DataFormat": "json",
+          "Sharing": "public",
+          "SchemaFile": "dogPic.json"
+        },
+        {
+          "Name": "dogLink",
+          "Required": true,
+          "DataFormat": "links",
+          "Sharing": "public"
+        }
+      ],
+      "Functions": [
+        {
+          "Name": "dogPicCreate",
+          "CallingType": "json",
+          "Exposure": "public"
+        },
+        {
+          "Name": "dogPicRead",
+          "CallingType": "json",
+          "Exposure": "public"
+        },
+        {
+          "Name": "dogPicUpdate",
+          "CallingType": "json",
+          "Exposure": "public"
+        },
+        {
+          "Name": "listDogs",
+          "CallingType": "json",
+          "Exposure": "public"
+        }
+      ]
+    }
+  ]
+}

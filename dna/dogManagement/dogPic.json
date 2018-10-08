@@ -1,0 +1,43 @@
+{
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/root.json",
+  "type": "object",
+  "title": "The Root Schema",
+  "required": [
+    "ascii",
+    "name",
+    "breed"
+  ],
+  "properties": {
+    "ascii": {
+      "$id": "#/properties/ascii",
+      "type": "string",
+      "title": "The Ascii Schema",
+      "default": "",
+      "examples": [
+        "//>"
+      ]
+    },
+    "name": {
+      "$id": "#/properties/name",
+      "type": "string",
+      "title": "The Name Schema",
+      "default": "",
+      "examples": [
+        "Spiky"
+      ],
+      "pattern": "^(.*)$"
+    },
+    "breed": {
+      "$id": "#/properties/breed",
+      "type": "string",
+      "title": "The Breed Schema",
+      "default": "",
+      "examples": [
+        "Huscii"
+      ],
+      "pattern": "^(.*)$"
+    }
+  }
+}

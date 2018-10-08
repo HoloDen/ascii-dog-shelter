@@ -1,0 +1,40 @@
+{
+  "Tests": [
+    {
+      "Convey": "auto-generated test for dogPicCreate",
+      "Zome": "dogManagement",
+      "FnName": "dogPicCreate",
+      "Input": {
+        "ascii": "//>",
+        "name": "Spiky",
+        "breed": "Huscii"
+      },
+      "Output": "%h%"
+    },
+    {
+      "Convey": "auto-generated test for dogPicRead",
+      "Zome": "dogManagement",
+      "FnName": "dogPicRead",
+      "Input": "%h%",
+      "Output": {
+        "ascii": "//>",
+        "name": "Spiky",
+        "breed": "Huscii"
+      }
+    },
+    {
+      "Convey": "auto-generated test for dogPicUpdate",
+      "Zome": "dogManagement",
+      "FnName": "dogPicUpdate",
+      "Input": "%h%",
+      "Output": "%h%"
+    },
+    {
+      "Convey": "auto-generated test for listDogs",
+      "Zome": "dogManagement",
+      "FnName": "listDogs",
+      "Input": "",
+      "Output": {}
+    }
+  ]
+}
